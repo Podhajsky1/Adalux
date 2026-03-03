@@ -10,7 +10,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 app = Flask(__name__, static_folder='.', static_url_path='')
 
-ANTHROPIC_KEY = os.environ.get("ANTHROPIC_KEY", "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")
+ANTHROPIC_KEY = os.environ.get("ANTHROPIC_KEY", "")
 ZNALOSTI_FILE = "adalux_znalosti.json"
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
