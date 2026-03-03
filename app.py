@@ -8,7 +8,7 @@ import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__, static_folder='.', static_url_path='')
 
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_KEY", "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")
 ZNALOSTI_FILE = "adalux_znalosti.json"
@@ -57,7 +57,7 @@ def precti_url(url):
 
 @app.route("/")
 def index():
-    return send_from_directory("static", "index.html")
+    return send_from_directory(".", "index.html")
 
 @app.route("/chat", methods=["POST"])
 def chat():
