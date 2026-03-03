@@ -83,7 +83,8 @@ def chat():
         )
         return jsonify({"reply": response.content[0].text})
     except Exception as e:
-        return jsonify({"reply": "Jejda, něco se pokazilo. Zkus to znovu! 😅"}), 500
+        print(f"CHYBA: {e}")
+        return jsonify({"reply": f"Chyba: {str(e)}"}), 500
 
 @app.route("/znalosti", methods=["GET"])
 def get_znalosti():
